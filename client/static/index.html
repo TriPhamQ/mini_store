@@ -4,25 +4,38 @@
 		<meta charset="utf-8">
 		<title>Mini Store</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
 		<script src="routes.js" charset="utf-8"></script>
 		<script src="assets/app.js" charset="utf-8"></script>
-		<!-- <script src="assets/controllers/.js" charset="utf-8"></script> -->
-		<!-- <script src="assets/factories/.js" charset="utf-8"></script> -->
-		<style>
-			textarea {
-				resize: none;
-				height: 150px;
-			}
-		</style>
+		<script src="assets/controllers/productsController.js" charset="utf-8"></script>
+		<script src="assets/controllers/customersController.js" charset="utf-8"></script>
+		<script src="assets/controllers/ordersController.js" charset="utf-8"></script>
+		<script src="assets/factories/productsFactory.js" charset="utf-8"></script>
+		<script src="assets/factories/customersFactory.js" charset="utf-8"></script>
+		<script src="assets/factories/ordersFactory.js" charset="utf-8"></script>
+		<script src="assets/filters/filters.js" charset="utf-8"></script>
 	</head>
 	<body>
 		<div class="container">
+			<div class="navbar-fixed">
+				<nav>
+					<div class="nav-wrapper">
+						<a href="#" class="brand-logo center">Logo</a>
+						<ul class="left hide-on-med-and-down">
+							<li><a href="#">Dashboard</a></li>
+							<li><a href="#/products">Products</a></li>
+							<li><a href="#/orders">Orders</a></li>
+							<li><a href="#/customers">Customers</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
 			<h1>Hello World</h1>
-			<div class="ng-view">
-
+			<div class="" ng-view>
+				<!-- Partials Views -->
 			</div>
 		</div>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>

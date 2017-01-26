@@ -6,7 +6,8 @@ var ProductSchema = new mongoose.Schema({
 	name: {type: String, required: true},
 	image: {type: String},
 	description: {type: String},
-	quantity: {type: Number}
+	quantity: {type: Number},
+	orders: {type: Schema.Types.ObjectId, ref: 'Order'}
 }, {timestamps: true});
 
 mongoose.model('Product', ProductSchema);

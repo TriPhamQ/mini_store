@@ -8,15 +8,15 @@ myApp.config(function ($routeProvider) {
 	})
 	.when('/orders', {
 		templateUrl: 'partials/orders.html',
-		controller: ''
+		controller: 'ordersController'
 	})
 	.when('/customers', {
 		templateUrl: 'partials/customers.html',
-		controller: ''
+		controller: 'customersController'
 	})
 	.when('/products', {
 		templateUrl: 'partials/products.html',
-		controller: ''
+		controller: 'productsController'
 	})
 	.otherwise({
 		redirectTo: '/'

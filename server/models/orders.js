@@ -3,8 +3,8 @@ console.log('The Orders Model');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var OrderSchema = new mongoose.Schema({
-	product: {type: Array,},
-	customer_name: {type: String},
+	quantity: {type: Number, required: true},
+	_product: {type: Schema.Types.ObjectId, ref: 'Product'},
 	_customer: {type: Schema.Types.ObjectId, ref: 'Customer'}
 }, {timestamps: true});
 

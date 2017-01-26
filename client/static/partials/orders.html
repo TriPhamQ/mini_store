@@ -1,0 +1,49 @@
+<div class="row">
+	<input class="input-field col s2" ng-model="searchText.name" id="search" class="form-control" placeholder="Filter text">
+</div>
+<div class="row">
+	<div class="input-field col s6">
+		<select class="browser-default" ng-model="newOrder.customer">
+			<option value="" disabled selected>Customer</option>
+			<option ng-selected="{{customer.name == newOrder.customer}}" ng-repeat="customer in customers" value="{{customer._id}}">{{customer.name}}</option>
+		</select>
+	</div>
+</div>
+<div class="row">
+	<div class="input-field col s2">
+		<input type="number" name="" value="" ng-model="newOrder.quantity">
+	</div>
+		<div class="input-field col s4">
+			<select class="browser-default" ng-model="newOrder.product">
+				<option value="" disabled selected>Product</option>
+				<option ng-selected="{{product.name == newOrder.product}}" ng-repeat="product in products" value="{{product._id}}">{{product.name}}</option>
+			</select>
+		</div>
+</div>
+<div class="row">
+	<table>
+		<thead>
+			<tr>
+				<th>Orders</th>
+				<th>Customer</th>
+				<th>Product</th>
+				<th>Quantity</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="order in orders">
+				<td ng-bind="order._id"></td>
+				<td ng-bind="order._customer"></td>
+				<td ng-bind="order._product"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="row">
+	<button class="btn waves-effect waves-light" type="button" name="button" ng-click="create()">Submit</button>
+</div>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('select').material_select();
+	});
+</script>
