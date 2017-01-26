@@ -9,11 +9,17 @@ module.exports = function(app){
 	app.get('/products', function (req, res) {
 		products.getall(req, res);
 	});
+	app.get('/products/:id', function (req, res) {
+		products.getone(req, res);
+	});
 	app.post('/customers/create', function (req, res) {
 		customers.create(req, res);
 	});
 	app.get('/customers', function (req, res) {
 		customers.getall(req, res);
+	});
+	app.get('/customers/:id', function (req, res) {
+		customers.getone(req, res);
 	});
 	app.post('/orders/create', function (req, res) {
 		orders.create(req, res);

@@ -3,9 +3,9 @@
 </div>
 <div class="row">
 	<div class="input-field col s6">
-		<select class="browser-default" ng-model="newOrder.customer">
+		<select class="browser-default" ng-model="newOrder._customer">
 			<option value="" disabled selected>Customer</option>
-			<option ng-selected="{{customer.name == newOrder.customer}}" ng-repeat="customer in customers" value="{{customer._id}}">{{customer.name}}</option>
+			<option ng-selected="{{customer._id == newOrder._customer}}" ng-repeat="customer in customers" value="{{customer._id}}">{{customer.name}}</option>
 		</select>
 	</div>
 </div>
@@ -14,11 +14,14 @@
 		<input type="number" name="" value="" ng-model="newOrder.quantity">
 	</div>
 		<div class="input-field col s4">
-			<select class="browser-default" ng-model="newOrder.product">
+			<select class="browser-default" ng-model="newOrder._product">
 				<option value="" disabled selected>Product</option>
-				<option ng-selected="{{product.name == newOrder.product}}" ng-repeat="product in products" value="{{product._id}}">{{product.name}}</option>
+				<option ng-selected="{{product._id == newOrder._product}}" ng-repeat="product in products" value="{{product._id}}">{{product.name}}</option>
 			</select>
 		</div>
+</div>
+<div class="row">
+	<button class="btn waves-effect waves-light" type="button" name="button" ng-click="create()">Submit</button>
 </div>
 <div class="row">
 	<table>
@@ -33,14 +36,12 @@
 		<tbody>
 			<tr ng-repeat="order in orders">
 				<td ng-bind="order._id"></td>
-				<td ng-bind="order._customer"></td>
-				<td ng-bind="order._product"></td>
+				<td ng-bind="order.customer_name"></td>
+				<td ng-bind="order.product_name"></td>
+				<td ng-bind="order.quantity"></td>
 			</tr>
 		</tbody>
 	</table>
-</div>
-<div class="row">
-	<button class="btn waves-effect waves-light" type="button" name="button" ng-click="create()">Submit</button>
 </div>
 <script type="text/javascript">
 	$(document).ready(function () {

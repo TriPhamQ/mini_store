@@ -32,6 +32,19 @@ module.exports = (function () {
 					res.json(result);
 				}
 			})
+		},
+		getone: function (req, res) {
+			console.log("Getting one product...");
+			console.log(req.params.id);
+			Product.find({_id: req.params.id}, function (err, result) {
+				if (err) {
+					console.log("Something went wrong with DB");
+				}
+				else {
+					console.log("Got Back Product DB", result);
+					res.json(result);
+				}
+			})
 		}
 	}
 })();

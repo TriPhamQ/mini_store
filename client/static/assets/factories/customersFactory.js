@@ -17,6 +17,12 @@ myApp.factory('customersFactory', ['$http', function ($http) {
 			callback(output);
 		});
 	};
-	
+
+	factory.getone = function (id, callback) {
+		$http.get('/customers/'+id).then(function (output) {
+			callback(output);
+		})
+	};
+
 	return factory;
 }]);

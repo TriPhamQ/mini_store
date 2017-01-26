@@ -32,6 +32,19 @@ module.exports = (function () {
 					res.json(result);
 				}
 			})
+		},
+		getone: function (req, res) {
+			console.log("Getting one customer...");
+			console.log(req.params.id);
+			Customer.find({_id: req.params.id}, function (err, result) {
+				if (err) {
+					console.log("Something went wrong with DB");
+				}
+				else {
+					console.log("Got Back Customer DB", result);
+					res.json(result);
+				}
+			})
 		}
 	}
 })();

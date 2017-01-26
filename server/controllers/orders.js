@@ -8,16 +8,25 @@ module.exports = (function () {
 		create: function (req, res) {
 			console.log("Creating...");
 			console.log(req.body);
-			var order = new Order({quantity: req.body.quantity, _customer: req.body.customer, _product: req.body.product})
-			order.save(function (err) {
+			// var order = new Order({quantity: req.body.quantity, _customer: req.body.customer, _product: req.body.product})
+			// order.save(function (err) {
+			// 	if (err) {
+			// 		if (err) {
+			// 			console.log("Something went wrong with DB");
+			// 		}
+			// 		else {
+			// 			console.log("Success!");
+			// 			res.json(result);
+			// 		}
+			// 	}
+			// });
+			Order.create(req.body, function (err, result) {
 				if (err) {
-					if (err) {
-						console.log("Something went wrong with DB");
-					}
-					else {
-						console.log("Success!");
-						res.json(result);
-					}
+					console.log("Something went wrong with DB");
+				}
+				else {
+					console.log("Success!");
+					res.json(result);
 				}
 			});
 		},

@@ -15,30 +15,31 @@
 		<button class="btn waves-effect waves-light" type="button" name="button" ng-click="create()">Submit</button>
 	</div>
 	<div class="col s10">
-		<div class="row">
+		<div class="row" ng-if="currentpage > -1">
 			<div class="col s2" ng-repeat="product in products | filter: searchText:strict | startFrom: currentpage*pagesize | limitTo: pagesize-10">
 				<img class="materialboxed" data-caption="{{product.description}}" width="150" height="150" src="{{product.image}}" alt="">
 				<p ng-bind-template="{{product.name}} - ({{product.quantity}} left)"></p>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" ng-if="currentpage > -1">
 			<div class="col s2" ng-repeat="product in products | filter: searchText:strict | startFrom: currentpage*pagesize+5 | limitTo: pagesize-10">
 				<img class="materialboxed" data-caption="{{product.description}}" width="150" height="150" src="{{product.image}}" alt="">
 				<p ng-bind-template="{{product.name}} - ({{product.quantity}} left)"></p>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" ng-if="currentpage > -1">
 			<div class="col s2" ng-repeat="product in products | filter: searchText:strict | startFrom: currentpage*pagesize+10 | limitTo: pagesize-10">
 				<img class="materialboxed" data-caption="{{product.description}}" width="150" height="150" src="{{product.image}}" alt="">
 				<p ng-bind-template="{{product.name}} - ({{product.quantity}} left)"></p>
 			</div>
 		</div>
+		{{currentpage}}
 		<div class="row">
 			<ul class="pagination">
-				<li class=""><a href="#/products" ng-click="currentpage = currentpage-1"><i class="material-icons">chevron_left</i></a></li>
-				<li class=""><a href="#/products" ng-click="currentpage = 1">1</a></li>
-				<li class=""><a href="#/products" ng-click="currentpage = 2">2</a></li>
-				<li class=""><a href="#/products" ng-click="currentpage = 3">3</a></li>
+				<li class=""><a href="#/products" ng-click="currentpage=currentpage-1"><i class="material-icons">chevron_left</i></a></li>
+				<li class=""><a href="#/products" ng-click="currentpage = 0">1</a></li>
+				<li class=""><a href="#/products" ng-click="currentpage = 1">2</a></li>
+				<li class=""><a href="#/products" ng-click="currentpage = 2">3</a></li>
 				<li class=""><a href="#/products" ng-click="currentpage = currentpage+1"><i class="material-icons">chevron_right</i></a></li>
 			</ul>
 		</div>
@@ -49,3 +50,4 @@
 		$('select').material_select();
 	});
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
