@@ -36,8 +36,8 @@
 		<tbody>
 			<tr ng-repeat="order in orders">
 				<td ng-bind="order._id"></td>
-				<td ng-bind="order.customer_name"></td>
-				<td ng-bind="order.product_name"></td>
+				<td ng-bind="order._customer.name"></td>
+				<td ng-bind="order._product.name"></td>
 				<td ng-bind="order.quantity"></td>
 			</tr>
 		</tbody>

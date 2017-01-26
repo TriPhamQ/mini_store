@@ -35,12 +35,12 @@ module.exports = (function () {
 		},
 		getall: function (req, res) {
 			console.log("Getting all products...");
-			Order.find({}, function (err, result) {
+			Order.find({}).populate(["_customer", "_product"]).exec(function (err, result) {
 				if (err) {
 					console.log("Something went wrong with DB");
 				}
 				else {
-					console.log("Got Back DB");
+					console.log("Success!");
 					res.json(result);
 				}
 			})

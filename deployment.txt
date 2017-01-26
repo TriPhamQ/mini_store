@@ -1,0 +1,14 @@
+sudo vim mini_store
+server {
+    listen 80;
+    location / {
+        proxy_pass http://172.31.42.203:9000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+sudo ln -s /etc/nginx/sites-available/mini_store /etc/nginx/sites-enabled/mini_store
